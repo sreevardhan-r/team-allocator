@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Faculty Team Allocator</title>
+    <link rel="stylesheet" href="project1.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Smart Group Allocator</h1>
+        <p>Faculty Tool: Randomize or Balance Teams by Skill</p>
+    </header>
+
+    <div class="controls">
+        <div class="full-width">
+            <label for="student-data">Student List</label>
+            <textarea id="student-data" placeholder="Enter names (one per line).&#10;For Smart Balancing, add a comma and score:&#10;Nikhil Jain, 97&#10;Ashish kumar, 92&#10;Rahul, 70"></textarea>
+            <div class="hint">Format: "Name" OR "Name, Score"</div>
+        </div>
+
+        <div>
+            <label for="group-count">Number of Groups</label>
+            <input type="number" id="group-count" min="2" value="4">
+        </div>
+
+        <div>
+            <label for="mode">Allocation Mode</label>
+            <select id="mode">
+                <option value="random">Pure Random (Shuffle)</option>
+                <option value="balanced">Smart Balance (By Score)</option>
+            </select>
+        </div>
+
+        <div class="full-width btn-group">
+            <button class="btn-primary" onclick="generateTeams()">Generate Teams</button>
+            <button class="btn-secondary" onclick="copyToClipboard()">Copy Results</button>
+            <button class="btn-secondary" onclick="clearAll()">Reset</button>
+        </div>
+    </div>
+
+    <div id="results-area"></div>
+</div>
+
+<script src="project1.js"></script>
+
+</body>
+</html>
